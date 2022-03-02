@@ -1,14 +1,15 @@
 import React from 'react'
+import { capitalizeFirstLetter } from '../../utils/helpers'
 
 const categories = [
     {
-        name: "commerical",
+        name: "Commerical",
         description: "Photos of grocery stores, food trucks, and other commercial projects"
     },
-    { name: "portraits", description: "Portraits of people in my life" },
-    { name: "food", description: "Delicious delicacies"},
+    { name: "Portraits", description: "Portraits of people in my life" },
+    { name: "Food", description: "Delicious delicacies"},
     {
-        name: "landscape",
+        name: "Landscape",
         desription: "Fields, farmhouses, waterfalls, and the beauty of nature"
     }
     
