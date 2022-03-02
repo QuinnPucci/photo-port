@@ -1,37 +1,31 @@
-import React, { useState } from 'react'
-import './App.css';
-import About from './components/About'
-import Nav from './components/Nav'
+import React, { useState } from 'react';
+import Nav from './components/Nav';
+import About from './components/About';
 import Gallery from './components/Gallery';
- 
-function App() {
 
-  const [categories] = useState ([
+function App() {
+  const [categories] = useState([
     {
-        name: "Commerical",
-        description: "Photos of grocery stores, food trucks, and other commercial projects"
+      name: 'commercial',
+      description: 'Photos of grocery stores, food trucks, and other commercial projects',
     },
-    { name: "Portraits", description: "Portraits of people in my life" },
-    { name: "Food", description: "Delicious delicacies"},
-    {
-        name: "Landscape",
-        desription: "Fields, farmhouses, waterfalls, and the beauty of nature"
-    }
-    
-  ])
-  
-  const [currentCategory, setCurrentCategory] = useState(categories[0])
+    { name: 'portraits', description: 'Portraits of people in my life' },
+    { name: 'food', description: 'Delicious delicacies' },
+    { name: 'landscape', description: 'Fields, farmhouses, waterfalls, and the beauty of nature' },
+  ]);
+
+  const [currentCategory, setCurrentCategory] = useState(categories[0]);
 
   return (
     <div>
       <Nav
-      categories={categories}
-      setCurrentCategory={setCurrentCategory}
-      currentCategory={currentCategory}
-      />
+        categories={categories}
+        setCurrentCategory={setCurrentCategory}
+        currentCategory={currentCategory}
+      ></Nav>
       <main>
-        <Gallery/>
-        <About/>
+        <Gallery currentCategory={currentCategory}></Gallery>
+        <About></About>
       </main>
     </div>
   );
