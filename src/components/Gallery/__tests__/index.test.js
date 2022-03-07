@@ -7,18 +7,19 @@ const portrait = { name : "portraits", description: "Portraits of people in my l
 
 afterEach(cleanup)
 
-describe('Gallery is rendering', () => {
-    it('renders', () => {
-    render(<Gallery currentCategory={portrait} /> )
-    })
+describe('Gallery component', () => {
 
+    it('renders', () => {
+      render(<Gallery currentCategory={portrait} />);
+    });
+  
     it('matches snapshot', () => {
-        const { asFragment } = render(<Gallery currentCategory={portrait} />)
-        expect(asFragment()).toMatchSnapshot()
+      const { asFragment } = render(<Gallery currentCategory={portrait} />)
+      expect(asFragment()).toMatchSnapshot()
     })
-
-    it('renders', () => {
-        const { getByTestId } = render(<Gallery currentCategory={portrait} />)
-        expect(getByTestId('h1tag')).toHaveTextContent('Portraits')
-      })
-})
+  });
+  
+  it('displays text', () => {
+    const { getByTestId } = render(<Gallery currentCategory={portrait} />)
+    expect(getByTestId('h1tag')).toHaveTextContent('Portraits')
+  })
